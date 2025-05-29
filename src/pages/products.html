@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse Commerce | Products</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/products.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Reuse header and sidebar templates -->
+    <div data-include="../templates/header.html"></div>
+    <div data-include="../templates/sidebar.html"></div>
+    
+    <main class="dashboard-content">
+      <div class="content-header">
+        <h2>Product Management</h2>
+        <button id="addProductBtn" class="btn-primary">
+          <i class="icon-plus"></i> Add Product
+        </button>
+      </div>
+
+      <!-- Product Filters -->
+      <div class="product-filters">
+        <div class="search-box">
+          <input type="text" id="productSearch" placeholder="Search products...">
+          <i class="icon-search"></i>
+        </div>
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+          <!-- Populated by JS -->
+        </select>
+      </div>
+
+      <!-- Products Table -->
+      <div class="table-container">
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Product</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="productsTableBody">
+            <!-- Filled by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button id="prevPage"><i class="icon-chevron-left"></i></button>
+        <span id="currentPage">1</span>
+        <button id="nextPage"><i class="icon-chevron-right"></i></button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Product Modal (Hidden by default) -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modalTitle">Add New Product</h3>
+      <form id="productForm">
+        <input type="hidden" id="productId">
+        
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          <input type="text" id="productName" required>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="productPrice">Price ($)</label>
+            <input type="number" id="productPrice" min="0" step="0.01" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="productStock">Stock</label>
+            <input type="number" id="productStock" min="0" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="productCategory">Category</label>
+          <select id="productCategory" required>
+            <!-- Populated by JS -->
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="productDescription">Description</label>
+          <textarea id="productDescription" rows="3"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="productImage">Product Image</label>
+          <div class="image-upload">
+            <input type="file" id="productImage" accept="image/*">
+            <div class="image-preview" id="imagePreview"></div>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn-primary">Save Product</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/utils/dom.js"></script>
+  <script src="../js/utils/form.js"></script>
+  <script src="../js/products.js"></script>
+</body>
+</html>

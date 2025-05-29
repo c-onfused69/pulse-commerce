@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse Commerce | Dashboard</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+  <!-- Main Layout -->
+  <div class="dashboard-container">
+    <!-- Header Component -->
+    <header class="dashboard-header">
+      <div class="branding">
+        <img src="../../public/images/logo.svg" alt="Pulse Commerce">
+        <h1>Dashboard</h1>
+      </div>
+      <div class="user-controls">
+        <div class="notification-badge">3</div>
+        <img src="../../public/images/avatar.png" alt="User" class="user-avatar">
+      </div>
+    </header>
+
+    <!-- Navigation Sidebar -->
+    <aside class="dashboard-sidebar">
+      <nav>
+        <ul>
+          <li class="active"><a href="#"><i class="icon-dashboard"></i> Overview</a></li>
+          <li><a href="products.html"><i class="icon-products"></i> Products</a></li>
+          <li><a href="orders.html"><i class="icon-orders"></i> Orders</a></li>
+          <li><a href="analytics.html"><i class="icon-analytics"></i> Analytics</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="settings-btn"><i class="icon-settings"></i> Settings</button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-content">
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">$12,427</div>
+          <div class="stat-label">Revenue</div>
+          <div class="stat-trend positive">↑ 12%</div>
+        </div>
+        <!-- Repeat for other stats -->
+      </div>
+
+      <!-- Charts Section -->
+      <div class="chart-container">
+        <canvas id="salesChart"></canvas>
+      </div>
+
+      <!-- Recent Orders Table -->
+      <div class="recent-orders">
+        <h2>Recent Orders</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Status</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/utils/dom.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>
